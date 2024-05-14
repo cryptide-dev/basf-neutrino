@@ -2792,7 +2792,7 @@ func (b *blockManager) checkHeaderSanity(blockHeader *wire.BlockHeader,
 	}
 
 	return blockchain.CheckBlockHeaderSanity(
-		blockHeader, b.cfg.ChainParams.PowLimit, b.cfg.TimeSource,
+		blockHeader, &b.cfg.ChainParams, b.cfg.TimeSource,
 		emptyFlags,
 	)
 }

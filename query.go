@@ -869,7 +869,7 @@ func (s *ChainService) GetBlock(blockHash chainhash.Hash,
 			block,
 			// We don't need to check PoW because by the time we get
 			// here, it's been checked during header synchronization
-			s.chainParams.PowLimit,
+			&s.chainParams,
 			s.timeSource,
 		); err != nil {
 			log.Warnf("Invalid block for %s received from %s: %v",
